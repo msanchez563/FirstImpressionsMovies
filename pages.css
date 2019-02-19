@@ -1,6 +1,8 @@
 img{
   position: relative;
   right: 20px;
+  top: 20px;
+  width: 100%;
 }
 #sub{
   max-width: 200px;
