@@ -1,9 +1,10 @@
+div{
+  color: red;
+}
 .topbar{
-    float:left;
-    color: red;
+    float: left;
 }
 
 .dropdown{
-    color:blue;
-    float:left;
+    float: left;
 }
