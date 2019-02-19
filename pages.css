@@ -1,3 +1,7 @@
+img{
+  position: relative;
+  left: 5px;
+}
 #sub{
   max-width: 200px;
   padding-left: 20px;
