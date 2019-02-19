@@ -3,10 +3,14 @@
   padding-left: 20px;
 }
 .topbar{
+  height: 60px;
   padding-left: 20px;
   background-color: red;
+  position: static;
 }
 .dropdown{
+  height: 50px;
   padding-left: 20px;
   background-color: blue;
+  position: static;
 }
