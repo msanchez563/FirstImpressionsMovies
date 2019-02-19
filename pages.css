@@ -2,14 +2,18 @@
   max-width: 200px;
   padding-left: 20px;
 }
+#sign{
+  max-width: 200px;
+  padding-left: 20px;
+}
 .topbar{
-  height: 100px;
+  height: 64px;
   padding-left: 20px;
   background-color: red;
   position: static;
 }
 .dropdown{
-  height: 90px;
+  height: 54px;
   padding-left: 20px;
   background-color: blue;
   position: static;
