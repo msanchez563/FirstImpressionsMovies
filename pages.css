@@ -26,8 +26,10 @@
 .movieimage img{
   width: 100%;
 }
+
 .footer{
-  height: 54px;
+  color: red;
+  height: 64px;
   text-align: center;
   background-color: #090809;
 }
