@@ -2,6 +2,8 @@
   position: relative;
   right: 20px;
   top: 21px;
+}
+#movieimage img{
   width: 100%;
 }
 #sub{
