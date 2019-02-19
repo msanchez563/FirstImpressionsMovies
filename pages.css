@@ -1,8 +1,8 @@
-img{
+#movieimage{
   position: relative;
   right: 20px;
   top: 21px;
-  width: 105%;
+  width: 100;
 }
 #sub{
   max-width: 200px;
