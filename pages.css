@@ -21,9 +21,8 @@
   position: static;
 }
 .movieimage{
-  position: relative;
-  right: 20px;
-  top: 21px;
+  position: static;
+  margin-bottom: 10px;
 }
 .movieimage img{
   width: 100%;
