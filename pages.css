@@ -22,12 +22,12 @@
 }
 .movieimage{
   position: static;
-  margin-bottom: 10px;
 }
 .movieimage img{
   width: 100%;
 }
 .footer{
+  height: 54px;
   text-align: center;
   background-color: #090809;
 }
