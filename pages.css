@@ -1,6 +1,7 @@
 .topbar{
   height: 64px;
   padding-left: 20px;
+  color: red;
   background-color: #090809;
   position: static;
   border-bottom: 1px solid;
@@ -32,4 +33,5 @@
   height: 64px;
   text-align: center;
   background-color: #090809;
+  position: static;
 }
