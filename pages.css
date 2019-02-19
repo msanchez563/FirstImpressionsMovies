@@ -1,10 +1,10 @@
-#movieimage{
-  position: relative;
-  right: 20px;
-  top: 21px;
-}
-#movieimage img{
-  width: 100%;
+.topbar{
+  height: 64px;
+  padding-left: 20px;
+  background-color: #090809;
+  position: static;
+  border-bottom: 1px solid;
+  border-bottom-color: #e40712;
 }
 #sub{
   max-width: 200px;
@@ -14,19 +14,19 @@
   max-width: 200px;
   padding-left: 20px;
 }
-.topbar{
-  height: 64px;
-  padding-left: 20px;
-  background-color: #090809;
-  position: static;
-  border-bottom: 1px solid;
-  border-bottom-color: #e40712;
-}
 .dropdown{
   height: 54px;
   padding-left: 20px;
   background-color: #26282a;
   position: static;
+}
+.movieimage{
+  position: relative;
+  right: 20px;
+  top: 21px;
+}
+.movieimage img{
+  width: 100%;
 }
 .footer{
   text-align: center;
