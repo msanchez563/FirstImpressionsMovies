@@ -1,0 +1,32 @@
+.topbar{
+  height: 64px;
+  padding-left: 20px;
+  color: red;
+  background-color: #090809;
+  position: static;
+  border-bottom: 1px solid;
+  border-bottom-color: #e40712;
+}
+#sub{
+  max-width: 200px;
+  padding-left: 20px;
+}
+#sign{
+  max-width: 200px;
+  padding-left: 20px;
+}
+.dropdown{
+  height: 54px;
+  padding-left: 20px;
+  background-color: #26282a;
+  position: static;
+}
+.footer{
+  color: red;
+  height: 64px;
+  text-align: center;
+  background-color: #090809;
+  position: static;
+  border-top: 1px solid;
+  border-top-color: #e40712
+}
