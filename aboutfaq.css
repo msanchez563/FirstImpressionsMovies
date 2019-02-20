@@ -21,6 +21,12 @@
   background-color: #26282a;
   position: static;
 }
+.aboutme{
+  border-right: 1px solid;
+  border-left: 1px solid;
+  border-right-color: #e40712;
+  border-left-color: #e40712;
+}
 .footer{
   color: red;
   height: 64px;
