@@ -33,6 +33,16 @@
   position: relative;
   top: 140px;
   text-align: center;
+  margin-right: 20px;
+}
+
+#signup{
+  border: 1px black solid
+  width: 23%;
+  height: auto;
+  position: relative;
+  top: 140px;
+  text-align: center;;
 }
 
 .footer{
