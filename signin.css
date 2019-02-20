@@ -32,17 +32,13 @@
   height: auto;
   position: relative;
   top: 140px;
-  float: left;
   text-align: center;
 }
-#signup{
-  border: 1px black solid
-  width: 23%;
-  height: auto;
-  position: relative;
-  top: 140px;
-  float:left;
-  text-align: center;
+#inputfield{
+  margin-left: 10px;
+}
+#inputfield{
+  margin-right: 5px;
 }
 
 .footer{
