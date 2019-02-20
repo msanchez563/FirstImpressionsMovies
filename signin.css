@@ -29,7 +29,7 @@
   padding-left: 30%;
 }
 #signin{
-  border: 1px black solid
+  border: 1px black solid;
   width: 23%;
   height: auto;
   position: relative;
@@ -39,12 +39,12 @@
 }
 
 #signup{
-  border: 1px black solid
+  border: 1px black solid;
   width: 23%;
   height: auto;
   position: relative;
-  top: 35px;
-  left: 200px;
+  top: 40px;
+  left: 250px;
   text-align: center;
 }
 
