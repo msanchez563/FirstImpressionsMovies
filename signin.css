@@ -31,7 +31,7 @@
 #signin{
   border: 1px black solid;
   width: 23%;
-  height: 150px;
+  height: 170px;
   position: relative;
   top: 140px;
   text-align: center;
@@ -43,7 +43,6 @@
   width: 23%;
   height: auto;
   position: relative;
-  top 10px;
   left: 310px;
   text-align: center;
 }
