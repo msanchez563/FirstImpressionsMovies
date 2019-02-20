@@ -3,7 +3,7 @@
   padding-left: 20px;
   color: red;
   background-color: #090809;
-  position: static;
+  position: fixed;
   border-bottom: 1px solid;
   border-bottom-color: #e40712;
 }
@@ -16,6 +16,7 @@
   padding-left: 20px;
 }
 .dropdown{
+  position:fixed;
   height: 54px;
   padding-left: 20px;
   background-color: #26282a;
@@ -33,7 +34,9 @@
   height: 64px;
   text-align: center;
   background-color: #090809;
-  position: static;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   border-top: 1px solid;
   border-top-color: #e40712
 }
