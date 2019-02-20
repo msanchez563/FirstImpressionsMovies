@@ -27,9 +27,17 @@
 }
 
 #signin{
-  border: 0.5px black solid
-  width: 200px;
-  height: 200px;
+  border: 1px black solid
+  width: 23%;
+  height: auto;
+  position: relative;
+  top: 140px;
+  text-align: center;
+}
+#signup{
+  border: 1px black solid
+  width: 23%;
+  height: auto;
   position: relative;
   top: 140px;
   text-align: center;
