@@ -25,7 +25,9 @@
   padding-left: 20px;
   background-color: #26282a;
 }
-
+.input{
+  text-align: center;
+}
 #signin{
   border: 1px black solid
   width: 23%;
@@ -41,7 +43,8 @@
   width: 23%;
   height: auto;
   position: relative;
-  top: 140px;
+  top: 100px;
+  left: 100px;
   text-align: center;;
 }
 
