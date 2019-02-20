@@ -28,14 +28,16 @@
   border-left-color: #e40712;
   max-width: 60%;
   position: relative;
-  left: 15%;
+  left: 20%;
 }
 .footer{
   color: red;
   height: 64px;
   text-align: center;
   background-color: #090809;
-  position: static;
+  position: absolute;
+  bottom: 0;
+  width: 100%
   border-top: 1px solid;
   border-top-color: #e40712
 }
