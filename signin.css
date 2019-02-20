@@ -26,6 +26,16 @@
   background-color: #26282a;
 }
 
+#signin{
+  border: 0.5px black solid
+  width: 200px;
+  height: 200px;
+  position relative;
+  top: 120px;
+  left: 40px;
+  text-align: center;
+}
+
 .footer{
   color: red;
   height: 64px;
