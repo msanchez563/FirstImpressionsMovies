@@ -10,17 +10,17 @@
 }
 #sub{
   max-width: 200px;
-  padding-left: 20px;
+  padding-left: 40px;
   position: relative;
   left: 20px;
   bottom: 20px;
 }
 #sign{
   max-width: 200px;
-  padding-left: 20px;
+  padding-left: 40px;
   position: relative;
-  left: 20px;
-  bottom: 20px;
+  left: 50px;
+  bottom: 50px;
 }
 .dropdown{
   position: fixed;
