@@ -1,5 +1,5 @@
 .topbar{
-  height: 64px;
+  height: 74px;
   padding-left: 20px;
   color: red;
   background-color: #090809;
@@ -11,10 +11,12 @@
 #sub{
   max-width: 200px;
   padding-left: 20px;
+  position: relative;
 }
 #sign{
   max-width: 200px;
   padding-left: 20px;
+  position: relative;
 }
 .dropdown{
   position: fixed;
