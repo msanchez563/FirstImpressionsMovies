@@ -17,6 +17,8 @@
   max-width: 200px;
   padding-left: 20px;
   position: relative;
+  left: 20px;
+  bottom: 20px;
 }
 .dropdown{
   position: fixed;
