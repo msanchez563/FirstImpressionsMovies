@@ -13,8 +13,8 @@
             <input id = "sign" type = "submit" value = "Sign-In"/>
           </div>
           <div class = "dropdown">
-            <input type = "submit" value = "Home" />
-            <select name = "Genre">
+            <form action = "index.php"><input type = "submit" value = "Home" /></form>
+            <form id = "search" action = "searchresult.php"><select name = "Genre">
                 <option>Horror</option>
                 <option>Comedy</option>
                 <option>Romance</option>
@@ -28,6 +28,7 @@
                 <option>2016</option>
                 <option>2015</option>
             </select>
+            <input type = "submit" value = "Search" /></form>
           </div>
           <form class = "input" action = "index.php">
             <div id = "signin">

@@ -23,6 +23,12 @@
   left: 300px;
   bottom: 65px;
 }
+#search{
+  padding-left: 40px;
+  position: relative;
+  bottom: 45px;
+  left: 100px;
+}
 .dropdown{
   position: fixed;
   top: 65px;
