@@ -25,6 +25,8 @@
 #search{
   padding-left: 40px;
   position: relative;
+  bottom: 50px;
+  left: 100px;
 }
 .dropdown{
   position: fixed;
