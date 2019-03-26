@@ -36,14 +36,14 @@ session_start();
           <form class = "input" action = "index.php">
             <div id = "signin">
               User:<br /><input type = "text" name="username" /><br />
-              Password:<br /><input type = "text" name = "password" /><br />
+              Password:<br /><input type = "password" name = "password" /><br />
               <br /><input type = "submit" value = "Sign-In"/>
             </div>
             <div id = "signup">
               Name(First Last):<br /><input type = "text" name = "Name" /><br />
               User:<br /><input type = "text" name="username" /><br />
-              Password:<br /><input type = "text" name = "password1" /><br />
-              Retype Password:<br /><input type = "text" name = "password2" /><br />
+              Password:<br /><input type = "password" name = "password1" /><br />
+              Retype Password:<br /><input type = "password" name = "password2" /><br />
 
             <br /><input type = "submit" value = "Sign-Up" />
             </div>

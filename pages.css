@@ -71,7 +71,9 @@ img{
   position: relative;
   left: 20%;
 }
-
+a:visited{
+  color: blue;
+}
 .footer{
   color: red;
   height: 64px;
