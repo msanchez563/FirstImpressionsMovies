@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
     <head>
         <link rel ="stylesheet" href = "pages.css">
@@ -34,13 +37,15 @@
             <div id = "signin">
               User:<br /><input type = "text" name="username" /><br />
               Password:<br /><input type = "text" name = "password" /><br />
-              <input type = "submit" value = "Sign-In"/>
+              <br /><input type = "submit" value = "Sign-In"/>
             </div>
             <div id = "signup">
-              Name:<br /><input type = "text" name = "Name" /><br />
+              Name(First Last):<br /><input type = "text" name = "Name" /><br />
               User:<br /><input type = "text" name="username" /><br />
-              Password:<br /><input type = "text" name = "password" /><br />
-              <input type = "submit" value = "Sign-Up" /><br />
+              Password:<br /><input type = "text" name = "password1" /><br />
+              Retype Password:<br /><input type = "text" name = "password2" /><br />
+
+            <br /><input type = "submit" value = "Sign-Up" />
             </div>
           </form>
         <div class = "footer">
