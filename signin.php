@@ -33,12 +33,14 @@ session_start();
             <input type = "text" name = "Search" />
             <input type = "submit" value = "Search" /></form>
           </div>
-          <form class = "input" action = "index.php">
+          <form class = "sign-in" action = "signuphandler.php">
             <div id = "signin">
               User:<br /><input type = "text" name="username" /><br />
               Password:<br /><input type = "password" name = "password" /><br />
               <br /><input type = "submit" value = "Sign-In"/>
             </div>
+          </form>
+          <form class = "sign-up" action = "signinhandler.php">S
             <div id = "signup">
               Name(First Last):<br /><input type = "text" name = "Name" /><br />
               User:<br /><input type = "text" name="username" /><br />
