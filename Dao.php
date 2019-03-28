@@ -1,6 +1,6 @@
 <?php
+require_once 'KLogger.php';
 // Dao.php
-// class for saving and getting comments from MySQL
 class Dao {
 
  private $host = "us-cdbr-iron-east-03.cleardb.net";
@@ -8,21 +8,29 @@ class Dao {
  private $user = "b15f88c6829de6";
  private $pass = "b814df9b";
 
+ protected $logger;
+
+ public function __construct() {
+         $this->logger = new KLogger ( "log.txt" , KLogger::DEBUG );
+    }
+
  public function getConnection () {
    return
      new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
          $this->pass);
  }
 
- public function saveComment ($comment) {
+ public function newUser ($name,$user_name,$password) {
    $conn = $this->getConnection();
    $saveQuery =
-       "INSERT INTO comment
-       (comment)
+       "INSERT INTO Users
+       (name,user_name,password)
        VALUES
-       (:comment)";
+       (:name,:user_name,:password)";
    $q = $conn->prepare($saveQuery);
-   $q->bindParam(":comment", $comment);
+   $q->bindParam(":name", $name);
+   $q->bindParam(":user_name",$user_name);
+   $q->bindParam(":password",$password);
    $q->execute();
  }
 
@@ -32,4 +40,3 @@ class Dao {
  }
 } // end Dao
 ?>
-mysql://b15f88c6829de6:b814df9b@us-cdbr-iron-east-03.cleardb.net/heroku_fac28c953799373?reconnect=true
