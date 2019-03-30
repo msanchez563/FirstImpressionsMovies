@@ -11,7 +11,7 @@ class Dao {
  protected $logger;
 
  public function __construct() {
-         $this->logger = new KLogger ( "log.txt" , KLogger::DEBUG );
+         $this->logger = new KLogger( "log.txt" , KLogger::DEBUG );
     }
 
  public function getConnection () {
@@ -20,23 +20,63 @@ class Dao {
          $this->pass);
  }
 
- public function newUser ($name,$user_name,$password) {
-   $conn = $this->getConnection();
-   $saveQuery =
-       "INSERT INTO Users
-       (name,user_name,password)
-       VALUES
-       (:name,:user_name,:password)";
-   $q = $conn->prepare($saveQuery);
-   $q->bindParam(":name", $name);
-   $q->bindParam(":user_name",$user_name);
-   $q->bindParam(":password",$password);
-   $q->execute();
+ public function emailExists($email){
+     $conn = $this->getConnection();
+     $q= $conn->prepare("SELECT COUNT(*) FROM Users WHERE email = :email;");
+     $q->bindParam(':email', $email);
+     $q->execute();
+     $results = $q->fetch(PDO::FETCH_ASSOC);
+     $result = $results["count(*)"];
+     if ($result) {
+         $this->logger->LogDebug(__FUNCTION__ . ": User was found.");
+         return TRUE;
+     } else {
+         $this->logger->LogDebug(__FUNCTION__ . ": User unable to be found.");
+         return FALSE;
+     }
+ }
+
+ public function usernameExists($user_name){
+     $conn = $this->getConnection();
+     $query = "SELECT COUNT(*) FROM Users WHERE user_name = :user_name;";
+     $q = $conn->prepare($query);
+     $q->bindParam(':user_name', $user_name);
+     $q->execute();
+     $results = $q->fetch(PDO::FETCH_ASSOC);
+     $result = $results["count(*)"];
+     if ($result) {
+         $this->logger->LogDebug(__FUNCTION__ . ": User was found.");
+         return TRUE;
+     } else {
+         $this->logger->LogDebug(__FUNCTION__ . ": User unable to be found.");
+         return FALSE;
+     }
+ }
+
+ public function createUser ($email,$name,$user_name,$password) {
+   $emailexists = $this->emailExists($email);
+   $usernameexists = $this->usernameExists($user_name);
+   if(!$exists && !$usernameexists){
+     $conn = $this->getConnection();
+     $query ="INSERT INTO Users(email, name, user_name, password) VALUES (:email, :name, :user_name, :password);";
+     $q = $conn->prepare($query);
+     $q->bindParam(":email",$email);
+     $q->bindParam(":name", $name);
+     $q->bindParam(":user_name",$user_name);
+     $q->bindParam(":password",$password);
+     $q->execute();
+
+     if ($status) {
+       $this->logger->LogDebug(__FUNCTION__ . ": Get user successful");
+       return $this->SUCCESS;
+    }
+   }
+   return $this->FAILURE;
  }
 
  public function getComments () {
    $conn = $this->getConnection();
-   return $conn->query("SELECT * FROM comment");
+   return $conn->query("SELECT * FROM Comments");
  }
 } // end Dao
 ?>

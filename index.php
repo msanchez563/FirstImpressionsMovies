@@ -12,7 +12,13 @@ session_start();
     <body>
           <div class = "topbar">
             MFI
-            <form id = "sign" action = "signin.php"><input type = "submit" value = "Sign-In" /></form>
+            <?php
+            if(isset($_SESSION['status']) && $_SESSION['status'] == 'logged'){
+              echo "<form id = 'sign' action = 'logout.php'><input type ='submit' value ='Logout' /></form>";
+            }else{
+              echo "<form id = 'sign' action = 'signin.php'><input type = 'submit' value = 'Sign-In' /></form>";
+            }
+            ?>
           </div>
           <div class = "dropdown">
             <form action = "index.php"><input type = "submit" value = "Home" /></form>

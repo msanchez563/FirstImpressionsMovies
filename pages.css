@@ -42,22 +42,23 @@ img{
     top: 129px;
     left: 0px;
 }
-#signin{
+.sign-in{
   border: 1px black solid;
   width: 23%;
-  height: 173px;
+  height: 200px;
   position: relative;
   top: 140px;
+  left: 25%;
   text-align: center;
   margin-right: 20px;
 }
-#signup{
+.sign-up{
   border: 1px black solid;
   width: 23%;
   height: auto;
   position: relative;
-  left: 310px;
-  bottom: 35px;
+  left: 50%;
+  bottom: 78px;
   text-align: center;
 }
 .aboutme{
