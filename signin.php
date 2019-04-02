@@ -39,12 +39,12 @@ session_start();
             <input type = "text" name = "Search" />
             <input type = "submit" value = "Search" /></form>
           </div>
-          <form method = "POST" class = "sign-in" action = "signinhandler.php">
-              User:<br /><input type = "text" name="usernameSI" /><br />
-              Password:<br /><input type = "password" name = "passwordSI" /><br />
+          <form method = "POST" class = "sign-in" action = "Handlers/signinhandler.php">
+              <div><label for = "usernameSI">User:</label><input type = "text" name="usernameSI" /></div>
+              <div><label for = "passwordSI">Password:</label><input type = "password" name = "passwordSI" /></div>
               <br /><input type = "submit" value = "Sign-In"/>
           </form>
-          <form method = "POST" class = "sign-up" action = "signuphandler.php">
+          <form method = "POST" class = "sign-up" action = "Handlers/signuphandler.php">
               <div><label for="name">Name(First Last):</label><input value="<?php echo isset($_SESSION['form_input']['name']) ? $_SESSION['form_input']['name'] : ''; ?>" type = "text" name = "name" /></div>
               <div><label for="email">Email:</label><input value="<?php echo isset($_SESSION['form_input']['email']) ? $_SESSION['form_input']['email'] : ''; ?>" type = "text" name = "email" /></div>
               <div><label for="user_name">User:</label><input value="<?php echo isset($_SESSION['form_input']['username']) ? $_SESSION['form_input']['username'] : ''; ?>" type = "text" name="user_name" /></div>

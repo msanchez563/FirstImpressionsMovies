@@ -9,6 +9,9 @@
   border-bottom: 1px solid;
   border-bottom-color: #e40712;
 }
+button{
+  cursor: pointer;
+}
 #sub{
   max-width: 200px;
   padding-left: 40px;

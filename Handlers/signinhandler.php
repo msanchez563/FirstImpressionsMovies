@@ -8,9 +8,18 @@ $password2 = $_POST['password2'];
 $valid = true;
 $messages = array();
 if (empty($username)) {
-  $messages[] = "Please enter a username";
+  $messages[] = "Please enter a username.";
   $valid = false;
 }
+if (empty($email)) {
+  $messages[] = "Please enter an email.";
+  $valid = false;
+}
+
+$email = test_input($_POST["email"]);
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $messages[] = "Invalid email format";
+  }
 if ($password1 != $password2) {
   $messages[] = "Passwords dont match";
   $valid = false;
