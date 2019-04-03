@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS heroku_fac28c953799373;
+USE heroku_fac28c953799373;
+
+CREATE TABLE IF NOT EXISTS  Users (
+    user_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    email varchar(64) NOT NULL UNIQUE,
+    name VARCHAR(64),
+    user_name VARCHAR(64),
+    password VARCHAR(256),
+    comment_permission TINYINT(1)
+);
+
+CREATE TABLE IF NOT EXISTS Comments (
+	comment_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
+	creator_user_id BIGINT UNSIGNED NOT NULL,
+    descript varchar(512),
+    create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(creator_user_id) REFERENCES Users(user_id)
+);
+
