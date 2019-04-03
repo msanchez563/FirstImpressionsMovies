@@ -35,9 +35,9 @@ if(empty($password2)){
 }
 
 $email = test_input($_POST["email"]);
-  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $messages[] = "Invalid email format";
-  }
+}
 if ($password1 != $password2) {
   $messages[] = "Passwords dont match";
   $valid = false;

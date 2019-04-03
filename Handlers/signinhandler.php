@@ -3,7 +3,7 @@ require_once '../Dao.php';
 session_start();
 $dao = new Dao();
 
-$username = $_POST['user_nameSI'];
+$username = $_POST['usernameSI'];
 $password = $_POST['passwordSI'];
 $valid = true;
 $messages = array();
@@ -16,7 +16,7 @@ if (empty($password)) {
   $messages[] = "Please enter a password.";
   $valid = false;
 }
-if($dao->userExists($username,$password) != TRUE){
+if($dao->userExists($username,$password) !== TRUE){
   $messages[] = "Invalid password/username";
   $valid = false;
 }
