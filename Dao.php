@@ -77,15 +77,16 @@ class Dao {
      }
  }
 
- public function createUser ($email,$name,$user_name,$password) {
+ public function createUser ($email,$first_name,$last_name,$user_name,$password) {
    $emailexists = $this->emailExists($email);
    $usernameexists = $this->usernameExists($user_name);
    if(!$exists && !$usernameexists){
      $conn = $this->getConnection();
-     $query ="INSERT INTO Users(email, name, user_name, password) VALUES (:email, :name, :user_name, :password);";
+     $query ="INSERT INTO Users(email, first_name,last_name, user_name, password) VALUES (:email, :first_name, :last_name :user_name, :password);";
      $q = $conn->prepare($query);
      $q->bindParam(":email",$email);
-     $q->bindParam(":name", $name);
+     $q->bindParam(":first_name", $first_name);
+     $q->bindParam(":last_name", $last_name);
      $q->bindParam(":user_name",$user_name);
      $q->bindParam(":password",$password);
      $q->execute();

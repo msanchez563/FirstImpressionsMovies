@@ -4,9 +4,10 @@ USE heroku_fac28c953799373;
 CREATE TABLE IF NOT EXISTS  Users (
     user_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
     email varchar(64) NOT NULL UNIQUE,
-    name VARCHAR(64),
-    user_name VARCHAR(64),
-    password VARCHAR(256),
+    first_name VARCHAR(16) NOT NULL,
+    last_name VARCHAR(16) NOT NULL,
+    user_name VARCHAR(64) NOT NULL,
+    password VARCHAR(256) NOT NULL,
     comment_permission TINYINT(1)
 );
 

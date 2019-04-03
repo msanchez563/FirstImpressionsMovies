@@ -2,11 +2,12 @@
 session_start();
 require_once '../Dao.php';
 $dao = new Dao();
-$email = $_POST['email'];
-$name= $_POST['name'];
-$username = $_POST['user_name'];
-$password1 = $_POST['password1'];
-$password2 = $_POST['password2'];
+$email = test_input($_POST["email"]);
+$first_name= htmlspecialchars($_POST['first_name']);
+$last_name = htmlspecialchars($_POST['last_name']);
+$username = htmlspecialchars($_POST['user_name']);
+$password1 = htmlspecialchars($_POST['password1']);
+$password2 = htmlspecialchars($_POST['password2']);
 $valid = true;
 $messages = array();
 
@@ -16,7 +17,17 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-
+function valid_email($str) {
+	return (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $str)) ? FALSE : TRUE;
+}
+if(empty($first_name)){
+  $messages[] = "Please enter a first name";
+  $valid = false;
+}
+if(empty($last_name)){
+  $messages[] = "Please enter a last name";
+  $valid = false;
+}
 if (empty($username)) {
   $messages[] = "Please enter a username.";
   $valid = false;
@@ -35,8 +46,9 @@ if(empty($password2)){
 }
 
 $email = test_input($_POST["email"]);
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (!valid_email($email)) {
     $messages[] = "Invalid email format";
+    $valid = false;
 }
 if ($password1 != $password2) {
   $messages[] = "Passwords dont match";
@@ -51,7 +63,7 @@ if (!$valid) {
 //echo "CONGRATS YOU CREATE A USER";
 // insert stuff into a user table in the database..
 
-$dao->createUser($email,$name,$username,$password1);
+$dao->createUser($email,$first_name,$last_name,$username,$password1);
 $_SESSION['status'] = 'logged';
 
 header("Location: ../index.php");

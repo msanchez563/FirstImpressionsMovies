@@ -38,7 +38,8 @@ session_start();
               <br /><input type = "submit" value = "Sign-In"/>
           </form>
           <form method = "POST" class = "sign-up" action = "Handlers/signuphandler.php">
-              <div><label for="name">Name(First Last):</label><input value="<?php echo isset($_SESSION['form_input']['name']) ? $_SESSION['form_input']['name'] : ''; ?>" type = "text" name = "name" /></div>
+              <div><label for="first_name">First Name:</label><input value="<?php echo isset($_SESSION['form_input']['first_name']) ? $_SESSION['form_input']['first_name'] : ''; ?>" type = "text" name = "first_name" /></div>
+              <div><label for="last_name">Last Name:</label><input value="<?php echo isset($_SESSION['form_input']['last_name']) ? $_SESSION['form_input']['last_name'] : ''; ?>" type = "text" name = "last_name" /></div>
               <div><label for="email">Email:</label><input value="<?php echo isset($_SESSION['form_input']['email']) ? $_SESSION['form_input']['email'] : ''; ?>" type = "text" name = "email" /></div>
               <div><label for="user_name">User:</label><input value="<?php echo isset($_SESSION['form_input']['user_name']) ? $_SESSION['form_input']['user_name'] : ''; ?>" type = "text" name="user_name" /></div>
               <div><label for="password1">Password:</label><input type = "password" name = "password1" /></div>

@@ -3,8 +3,8 @@ require_once '../Dao.php';
 session_start();
 $dao = new Dao();
 
-$username = $_POST['usernameSI'];
-$password = $_POST['passwordSI'];
+$username = htmlspecialchars($_POST['usernameSI']);
+$password = htmlspecialchars($_POST['passwordSI']);
 $valid = true;
 $messages = array();
 
