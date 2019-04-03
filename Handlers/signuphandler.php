@@ -53,6 +53,7 @@ if (!$valid) {
 
 $dao->createUser($email,$name,$username,$password1);
 $_SESSION['status'] = 'logged';
+
 header("Location: ../index.php");
 exit;
 ?>
