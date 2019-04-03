@@ -9,6 +9,7 @@ class Dao {
  private $pass = "b814df9b";
 
  protected $logger;
+ private $message;
 
  public function __construct() {
          $this->logger = new KLogger( "log.txt" , KLogger::DEBUG );
@@ -19,6 +20,29 @@ class Dao {
      new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
          $this->pass);
  }
+
+ public function userExists($user_name,$password){
+  try {
+      $conn = $this->getConnection();
+      $query = $conn->prepare("SELECT COUNT(*) FROM Users WHERE user_name = :user_name AND password = :password;");
+      $query->bindParam(':user_name', $user_name);
+      $query->bindParam(':password', $password);
+      $query->execute();
+      $results = $query->fetch(PDO::FETCH_ASSOC);
+      $result = $results["COUNT(*)"];
+      if ($result) {
+          $this->logger->LogDebug(__FUNCTION__ . "(): User was found.");
+          return TRUE;
+      } else {
+          $this->logger->LogDebug(__FUNCTION__ . "(): User unable to be found.");
+          return FALSE;
+      }
+  } catch (Exception $e) {
+      $this->logger->LogError(__FUNCTION__ . "(): Unable to check if user exists");
+      $this->logger->LogError(__FUNCTION__ . "(): " . $e->getMessage());
+      return NULL;
+  }
+}
 
  public function emailExists($email){
      $conn = $this->getConnection();
@@ -72,6 +96,10 @@ class Dao {
     }
    }
    return $this->FAILURE;
+ }
+
+ public function getMessage(){
+   return $this->message;
  }
 
  public function getComments () {
