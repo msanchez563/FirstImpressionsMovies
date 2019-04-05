@@ -9,11 +9,11 @@ $valid = true;
 $messages = array();
 
 if (empty($username)) {
-  $messages[] = "Please enter a username.";
+  $messages[] = "Please enter a username to sign in.";
   $valid = false;
 }
 if (empty($password)) {
-  $messages[] = "Please enter a password.";
+  $messages[] = "Please enter a password to sign in.";
   $valid = false;
 }
 if($dao->userExists($username,$password) !== TRUE){

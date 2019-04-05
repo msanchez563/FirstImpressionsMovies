@@ -21,23 +21,23 @@ function valid_email($str) {
 	return (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $str)) ? FALSE : TRUE;
 }
 if(empty($first_name)){
-  $messages[] = "Please enter a first name";
+  $messages[] = "Please enter a first name.";
   $valid = false;
 }
 if(empty($last_name)){
-  $messages[] = "Please enter a last name";
+  $messages[] = "Please enter a last name.";
   $valid = false;
 }
 if (empty($username)) {
-  $messages[] = "Please enter a username.";
+  $messages[] = "Please enter a username to sign up.";
   $valid = false;
 }
 if (empty($email)) {
-  $messages[] = "Please enter an email.";
+  $messages[] = "Please enter an email to sign up.";
   $valid = false;
 }
 if (empty($password1)) {
-  $messages[] = "Please enter a password.";
+  $messages[] = "Please enter a password to sign up.";
   $valid = false;
 }
 if(empty($password2)){
