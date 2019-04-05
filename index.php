@@ -22,20 +22,7 @@ session_start();
           </div>
           <div class = "dropdown">
             <form action = "index.php"><input type = "submit" value = "Home" /></form>
-            <form id = "search" action = "searchresult.php"><select name = "Genre">
-                <option>Horror</option>
-                <option>Comedy</option>
-                <option>Romance</option>
-                <option>Thriller</option>
-                <option>Foreign</option>
-            </select>
-            <select name = "Year">
-                <option>2019</option>
-                <option>2018</option>
-                <option>2017</option>
-                <option>2016</option>
-                <option>2015</option>
-            </select>
+            <form method = "GET" id = "search" action = "searchresult.php">
             <input type = "text" name = "Search" />
             <input type = "submit" value = "Search" /></form>
           </div>
