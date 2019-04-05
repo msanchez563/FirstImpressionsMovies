@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS Comments (
 	comment_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
 	creator_user_id BIGINT UNSIGNED NOT NULL,
     descript varchar(512),
+     movie_title varchar(32),
     create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(creator_user_id) REFERENCES Users(user_id)
 );
