@@ -1,5 +1,6 @@
 <?php
 session_start();
+$movie_title = $_GET['Search'];
 ?>
 <html>
     <head>
@@ -22,20 +23,23 @@ session_start();
           </div>
           <div class = "dropdown">
             <form action = "index.php"><input type = "submit" value = "Home" /></form>
-            <form method = "POST" id = "search" action = "searchresult.php">
-            <input type = "text" name = "Search" />
-            <input type = "submit" value = "Search" />
-            </form>
           </div>
           <div class = "results">
-            <form method = "POST" action = "commenthandler.php">
-            <?php
-              $movie_title = $_GET['Search'];
-              echo "<input type = 'text' value = '" . $movie_title . "' name = 'movietitle' disabled />"
-            ?>
-            <textarea maxlength = "512" name = "descript" value = "Place Movie Review Here"></textarea>
+            <form method = "POST" action = "Handlers/commenthandler.php">
+            <div><label for = "movie">Movie Title:</label><br><input id = "movie" type = "text" name = "movietitle" /></div><br>
+            <div><label for = "reviewtext">Review: </label><br><textarea id = "reviewtext" maxlength = "512" name = "descript" value = "Place Movie Review Here"></textarea></div>
+            <input type = "submit" value = "Leave Review" />
             </form>
           </div>
+          <?php
+            if (isset($_SESSION['messages'])) {
+              foreach($_SESSION['messages'] as $message) {
+                echo $message;
+              }
+            }
+            unset($_SESSION['messages']);
+            unset($_SESSION['form_input']);
+          ?>
         <div class = "footer">
           &copy; <a href = "aboutfaq.php">About Us</a> | <a href = "aboutfaq.php">FAQ</a>
         </div>

@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once 'Dao.php';
+$dao = new Dao();
 ?>
 <html>
     <head>
@@ -22,20 +24,38 @@ session_start();
           </div>
           <div class = "dropdown">
             <form action = "index.php"><input type = "submit" value = "Home" /></form>
-            <form class = "reviews" action = "recentreviews.php">
-              Click To See Past Reviews:
-              <input id = "moviereviews" type = "submit" value = "See Reviews" />
-            </form>
             <?php
             if(isset($_SESSION['status']) && $_SESSION['status'] == 'logged'){
             echo "<form class = 'leavereview' action = 'moviereview.php'>";
-            echo "Click To Leave Movie Review: ";
+            echo "Click To Leave Movie Review:";
             echo "<input id = 'review' type = 'submit' value = 'Leave Review' />";
             echo "</form>";
             }
             ?>
           </div>
-        <div class = "movieimage"><img src="moviescreen.png"/></div>
+          <div class = "last10reviews">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Reviewer UserName</th>
+                        <th>Movie Title</th>
+                        <th>ReviewDescription</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        $comments = $dao->getLast10Comments();
+                        foreach($comments as $comment){
+                    ?>
+                    <tr>
+                        <td><?php echo htmlentities($comment['user_name']); ?><td>
+                        <td><?php echo htmlentities($comment['movie_title']); ?><td>
+                        <td><?php echo htmlentities($comment['descript']); ?><td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+          </div>
         <div class = "footer">
           &copy; <a href = "aboutfaq.php">About Us</a> | <a href = "aboutfaq.php">FAQ</a>
     </body>

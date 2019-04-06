@@ -22,9 +22,9 @@ session_start();
           </div>
           <div class = "dropdown">
             <form action = "index.php"><input type = "submit" value = "Home" /></form>
-            <form method = "POST" id = "search" action = "searchresult.php">
-            <input type = "text" name = "Search" />
-            <input type = "submit" value = "Search" /></form>
+            <form class = "search" action = "searchresult.php">
+            Click To Leave Movie Review:
+            <input id = "review" type = "submit" value = "Leave Review" /></form>
           </div>
         <div class = "aboutme">
           <h1>AboutMe</h1>

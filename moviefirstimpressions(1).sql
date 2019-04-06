@@ -7,8 +7,7 @@ CREATE TABLE IF NOT EXISTS  Users (
     first_name VARCHAR(16) NOT NULL,
     last_name VARCHAR(16) NOT NULL,
     user_name VARCHAR(64) NOT NULL,
-    password VARCHAR(256) NOT NULL,
-    comment_permission TINYINT(1)
+    password VARCHAR(256) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Comments (

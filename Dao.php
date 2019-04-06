@@ -15,9 +15,7 @@ public function __construct() {
 }
 
 public function getConnection () {
-   return
-     new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
-         $this->pass);
+   return new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
 }
 
 public function userExists($user_name,$password){
@@ -76,45 +74,85 @@ public function usernameExists($user_name){
      }
 }
 
-public function createUser ($email,$first_name,$last_name,$user_name,$password) {
-   $emailexists = $this->emailExists($email);
-   $usernameexists = $this->usernameExists($user_name);
-   if(!$exists && !$usernameexists){
-     $conn = $this->getConnection();
-     $query ="INSERT INTO Users(email, first_name,last_name, user_name, password) VALUES (:email, :first_name, :last_name :user_name, :password);";
-     $q = $conn->prepare($query);
-     $q->bindParam(":email",$email);
-     $q->bindParam(":first_name", $first_name);
-     $q->bindParam(":last_name", $last_name);
-     $q->bindParam(":user_name",$user_name);
-     $q->bindParam(":password",$password);
-     $q->execute();
+public function getUserId($user_name) {
+  try {
+      $conn = $this->getConnection();
+      $query = $conn->prepare(
+          "SELECT user_id FROM Users
+              WHERE user_name = :user_name;"
+      );
+      $query->bindParam(":user_name", $user_name);
+      $query->setFetchMode(PDO::FETCH_ASSOC);
+      $query->execute();
+      $userId = $query->fetch();
+      $this->logger->LogDebug(basename(__FILE__) . ":" . __FUNCTION__ . ": Get user by user_name successful");
+      return $userId;
+  } catch (Exception $e) {
+      $this->logger->LogError(basename(__FILE__) . ":" . __FUNCTION__ . "(): Unable to get user by username");
+      $this->logger->LogError(basename(__FILE__) . ":" . __FUNCTION__ . "(): " . $e->getMessage());
+      return NULL;
+  }
+  
+}
 
-     if ($status) {
-       $this->logger->LogDebug(__FUNCTION__ . ": Get user successful");
+public function createUser ($email,$first_name,$last_name,$user_name,$password) {
+   try{
+    $emailexists = $this->emailExists($email);
+    $usernameexists = $this->usernameExists($user_name);
+    if(!$exists && !$usernameexists){
+       $conn = $this->getConnection();
+       $query ="INSERT INTO Users(email, first_name,last_name, user_name, password) VALUES (:email, :first_name, :last_name :user_name, :password);";
+       $q = $conn->prepare($query);
+       $q->bindParam(":email",$email);
+       $q->bindParam(":first_name", $first_name);
+       $q->bindParam(":last_name", $last_name);
+       $q->bindParam(":user_name",$user_name);
+       $q->bindParam(":password",$password);
+       $q->execute();
+       $this->logger->LogDebug(basename(__FILE__) . ":" . __FUNCTION__ . "(): Create user successful");
        return $this->SUCCESS;
+    } else {
+      $this->logger->LogWarn(basename(__FILE__) . ":" . __FUNCTION__ . "(): User exists already");
+      return $this->FAILURE;
     }
+   } catch (Exception $e){
+      $this->logger->LogError(basename(__FILE__) . ":" . __FUNCTION__ . "(): Unable to create user");
+      $this->logger->LogError(basename(__FILE__) . ":" . __FUNCTION__ . "(): " . $e->getMessage());
+      return $this->FAILURE;
    }
-   return $this->FAILURE;
  }
 
 public function getLast10Comments () {
-  $conn = $this->getConnection();
-  return $conn->query("SELECT U.user_name,C.movie_title,C.descript FROM Users as U JOIN Customers as C on U.user_id = C.creator_user_id ORDER BY C.create_date desc");
+  try{
+    $conn = $this->getConnection();
+    $query = $conn->prepare("SELECT * FROM Users as U JOIN Customers as C on U.user_id = C.creator_user_id ORDER BY C.create_date desc LIMIT 10;");
+    $query->setFetchMode(PDO::FETCH_ASSOC);
+    $query->execute();
+    $tencomments = $query->fetch();
+    $this->logger->LogDebug(basename(__FILE__) . ":" . __FUNCTION__ . ": Last 10 Comments Retrieved Successfully.");
+    return $tencomments;
+  }catch (Exception $e){
+    $this->logger->LogError(basename(__FILE__) . ":" . __FUNCTION__ . "(): Unable to get Last 10 Comments.");
+    $this->logger->LogError(basename(__FILE__) . ":" . __FUNCTION__ . "(): " . $e->getMessage());
+    return NULL;
+  }
 }
 
 public function createComment($creator_user_id,$descript,$movie_title){
-  $conn = $this->getConnection();
-  $query = "INSERT INTO Comments(creator_user_id,descript,movie_title) VALUES(:creator_user_id,:descript,:movie_title);";
-  $q = $conn->prepare($query);
-  $q->bindParam(":creator_user_id",$creator_user_id);
-  $q->bindParam(":descript",$descript);
-  $q->bindParam(":movie_title",$movie_title);
-  $q->execute();
-
-  if($status){
-    $this->logger->LogDebug(__FUNCTION__ . ": Comment Created Successfully");
+  try{
+    $conn = $this->getConnection();
+    $query = "INSERT INTO Comments(creator_user_id,descript,movie_title) VALUES(:creator_user_id,:descript,:movie_title);";
+    $q = $conn->prepare($query);
+    $q->bindParam(":creator_user_id",$creator_user_id);
+    $q->bindParam(":descript",$descript);
+    $q->bindParam(":movie_title",$movie_title);
+    $q->execute();
+    $this->logger->LogDebug(basename(__FILE__) . ":" . __FUNCTION__ . "(): Created comment successfully");
     return $this->SUCCESS;
+  }catch(Exception $e){
+    $this->logger->LogError(basename(__FILE__) . ":" . __FUNCTION__ . "(): Unable to create comment");
+    $this->logger->LogError(basename(__FILE__) . ":" . __FUNCTION__ . "(): " . $e->getMessage());
+    return $this->FAILURE;
   }
   return $this->FAILURE;
  }
