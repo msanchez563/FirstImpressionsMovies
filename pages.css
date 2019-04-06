@@ -26,6 +26,15 @@ button{
   bottom: 15px;
   left: 85%;
 }
+.last10reviews{
+  border: 1px black solid;
+  position: absolute;
+  text-align: center;
+  top: 150px;
+  left: 45%;
+  width: 20%;
+  height: 20%;
+}
 .reviews{
   position: relative;
   left: 40%;

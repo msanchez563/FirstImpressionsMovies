@@ -125,10 +125,10 @@ public function createUser ($email,$first_name,$last_name,$user_name,$password) 
 public function getLast10Comments () {
   try{
     $conn = $this->getConnection();
-    $query = $conn->prepare("SELECT * FROM Users as U JOIN Customers as C on U.user_id = C.creator_user_id ORDER BY C.create_date desc LIMIT 10;");
+    $query = $conn->prepare("SELECT * FROM Comments ORDER BY create_date desc LIMIT 10;");
     $query->setFetchMode(PDO::FETCH_ASSOC);
     $query->execute();
-    $tencomments = $query->fetch();
+    $tencomments = $query->fetchAll();
     $this->logger->LogDebug(basename(__FILE__) . ":" . __FUNCTION__ . ": Last 10 Comments Retrieved Successfully.");
     return $tencomments;
   }catch (Exception $e){

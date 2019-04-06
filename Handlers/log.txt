@@ -40,3 +40,16 @@ now - DEBUG --> Dao.php:createUser(): Create user successful
 now - DEBUG --> Dao.php:getUserId: Get user by user_name successful 
 now - DEBUG --> Dao.php:getUserId: Get user by user_name successful 
 now - DEBUG --> Dao.php:createComment(): Created comment successfully 
+now - DEBUG --> emailExists: User unable to be found. 
+now - DEBUG --> usernameExists: User unable to be found. 
+now - DEBUG --> Dao.php:createUser(): Create user successful 
+now - DEBUG --> Dao.php:getUserId: Get user by user_name successful 
+now - DEBUG --> Dao.php:createComment(): Created comment successfully 
+now - DEBUG --> userExists(): User unable to be found. 
+now - DEBUG --> userExists(): User unable to be found. 
+now - DEBUG --> userExists(): User unable to be found. 
+now - DEBUG --> emailExists: User unable to be found. 
+now - DEBUG --> usernameExists: User unable to be found. 
+now - DEBUG --> Dao.php:createUser(): Create user successful 
+now - DEBUG --> Dao.php:getUserId: Get user by user_name successful 
+now - DEBUG --> Dao.php:createComment(): Created comment successfully 
