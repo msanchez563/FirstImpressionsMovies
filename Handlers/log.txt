@@ -21,3 +21,5 @@ now - DEBUG --> emailExists: User unable to be found.
 now - DEBUG --> usernameExists: User unable to be found. 
 now - DEBUG --> emailExists: User unable to be found. 
 now - DEBUG --> usernameExists: User unable to be found. 
+now - DEBUG --> emailExists: User unable to be found. 
+now - DEBUG --> usernameExists: User unable to be found. 
