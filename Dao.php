@@ -101,8 +101,7 @@ public function createUser ($email,$first_name,$last_name,$user_name,$password) 
     $usernameexists = $this->usernameExists($user_name);
     if(!$exists && !$usernameexists){
        $conn = $this->getConnection();
-       $query ="INSERT INTO Users(email, first_name,last_name, user_name, password) VALUES (:email, :first_name, :last_name :user_name, :password);";
-       $q = $conn->prepare($query);
+       $q = $conn->prepare("INSERT INTO Users (email, first_name,last_name, user_name, password) VALUES (:email, :first_name, :last_name :user_name, :password);");
        $q->bindParam(":email",$email);
        $q->bindParam(":first_name", $first_name);
        $q->bindParam(":last_name", $last_name);
@@ -141,8 +140,7 @@ public function getLast10Comments () {
 public function createComment($creator_user_id,$descript,$movie_title){
   try{
     $conn = $this->getConnection();
-    $query = "INSERT INTO Comments(creator_user_id,descript,movie_title) VALUES(:creator_user_id,:descript,:movie_title);";
-    $q = $conn->prepare($query);
+    $q = $conn->prepare("INSERT INTO Comments (creator_user_id,descript,movie_title) VALUES (:creator_user_id,:descript,:movie_title);");
     $q->bindParam(":creator_user_id",$creator_user_id);
     $q->bindParam(":descript",$descript);
     $q->bindParam(":movie_title",$movie_title);
