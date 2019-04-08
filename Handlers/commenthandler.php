@@ -8,8 +8,8 @@ $movietitle = $_POST['movietitle'];
 $descript = $_POST['descript'];
 $messages = array();
 $valid = true;
-if (empty($user_name)){
-  $messages[] = "Username not found";  
+if (empty($user_name)) {
+  $messages[] = "Username not found";
 }
 if (empty($movietitle)) {
   $messages[] = "Please enter the title to a movie";
@@ -21,16 +21,15 @@ if (empty($descript)) {
 }
 
 if (!$valid) {
-    $_SESSION['messages'] = $messages;
-    $_SESSION['form_input'] = $_POST;
-    header("Location: ../moviereview.php");
-    exit();
+  $_SESSION['messages'] = $messages;
+  $_SESSION['form_input'] = $_POST;
+  header("Location: ../moviereview.php");
+  exit();
 }
 
 $user_id = $dao->getUserId($username);
-$dao->createComment($user_id,$descript,$movietitle);
+$dao->createComment($user_id, $descript, $movietitle);
 
 $_SESSION['commentresult'] = "Movie Review Successfully Posted";
 header("Location: ../index.php");
 exit;
-?>

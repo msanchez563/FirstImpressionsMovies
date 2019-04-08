@@ -16,15 +16,15 @@ if (empty($password)) {
   $messages[] = "Please enter a password to sign in.";
   $valid = false;
 }
-if($dao->userExists($username,$password) !== TRUE){
+if ($dao->userExists($username, $password) !== TRUE) {
   $messages[] = "Invalid password/username";
   $valid = false;
 }
 if (!$valid) {
-    $_SESSION['messages'] = $messages;
-    $_SESSION['form_input'] = $_POST;
-    header("Location: ../signin.php");
-    exit();
+  $_SESSION['messages'] = $messages;
+  $_SESSION['form_input'] = $_POST;
+  header("Location: ../signin.php");
+  exit();
 }
 
 //echo "CONGRATS YOU CREATE A USER";
@@ -33,4 +33,3 @@ $_SESSION['user'] = $username;
 
 header("Location: ../index.php");
 exit;
-?>

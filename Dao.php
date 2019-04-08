@@ -155,4 +155,3 @@ public function createComment($creator_user_id,$descript,$movie_title){
   return $this->FAILURE;
  }
 } // end Dao
-?>
