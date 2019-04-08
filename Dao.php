@@ -77,10 +77,7 @@ public function usernameExists($user_name){
 public function getUserId($user_name) {
   try {
       $conn = $this->getConnection();
-      $query = $conn->prepare(
-          "SELECT user_id FROM Users
-              WHERE user_name = :user_name;"
-      );
+      $query = $conn->prepare("SELECT user_id FROM Users WHERE user_name = :user_name;");
       $query->bindParam(":user_name", $user_name);
       $query->setFetchMode(PDO::FETCH_ASSOC);
       $query->execute();
@@ -92,7 +89,23 @@ public function getUserId($user_name) {
       $this->logger->LogError(basename(__FILE__) . ":" . __FUNCTION__ . "(): " . $e->getMessage());
       return NULL;
   }
-  
+}
+
+public function getUserById($user_id) {
+  try {
+      $conn = $this->getConnection();
+      $query = $conn->prepare("SELECT user_name FROM Users WHERE user_id = :user_id;");
+      $query->bindParam(":user_id", $user_id);
+      $query->setFetchMode(PDO::FETCH_ASSOC);
+      $query->execute();
+      $userName = $query->fetch();
+      $this->logger->LogDebug(basename(__FILE__) . ":" . __FUNCTION__ . ": Get user_name by user_id successful");
+      return $userName;
+  } catch (Exception $e) {
+      $this->logger->LogError(basename(__FILE__) . ":" . __FUNCTION__ . "(): Unable to get user by user_id");
+      $this->logger->LogError(basename(__FILE__) . ":" . __FUNCTION__ . "(): " . $e->getMessage());
+      return NULL;
+  }
 }
 
 public function createUser ($email,$first_name,$last_name,$user_name,$password) {
@@ -101,14 +114,14 @@ public function createUser ($email,$first_name,$last_name,$user_name,$password) 
     $usernameexists = $this->usernameExists($user_name);
     if(!$exists && !$usernameexists){
        $conn = $this->getConnection();
-       $q = $conn->prepare("INSERT INTO Users (email, first_name,last_name, user_name, password) VALUES (:email, :first_name, :last_name :user_name, :password);");
+       $q = $conn->prepare("INSERT INTO Users (email, first_name,last_name, user_name, password) VALUES (:email, :first_name, :last_name, :user_name, :password);");
        $q->bindParam(":email",$email);
        $q->bindParam(":first_name", $first_name);
        $q->bindParam(":last_name", $last_name);
        $q->bindParam(":user_name",$user_name);
        $q->bindParam(":password",$password);
-       $q->execute();
-       $this->logger->LogDebug(basename(__FILE__) . ":" . __FUNCTION__ . "(): Create user successful");
+       $status = $q->execute() ? "SUCCESSFUL" : "FAILURE";
+       $this->logger->LogDebug(basename(__FILE__) . ":" . __FUNCTION__ . "(): Create user " . $status);
        return $this->SUCCESS;
     } else {
       $this->logger->LogWarn(basename(__FILE__) . ":" . __FUNCTION__ . "(): User exists already");

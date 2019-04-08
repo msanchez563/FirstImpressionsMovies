@@ -50,7 +50,8 @@ $dao = new Dao();
         foreach ($comments as $comment) {
           ?>
           <tr>
-            <td><?php echo htmlentities($comment['user_name']); ?>
+            <td><?php $username = $dao->getUserById($comment['creator_user_id']);
+             echo htmlentities($username['user_name']); ?>
             <td>
             <td><?php echo htmlentities($comment['movie_title']); ?>
             <td>

@@ -28,7 +28,7 @@ if (!$valid) {
 }
 
 $user_id = $dao->getUserId($username);
-$dao->createComment($user_id, $descript, $movietitle);
+$dao->createComment($user_id['user_id'], $descript, $movietitle);
 
 $_SESSION['commentresult'] = "Movie Review Successfully Posted";
 header("Location: ../index.php");
