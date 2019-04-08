@@ -1,8 +1,0 @@
-now - DEBUG --> Dao.php:getLast10Comments: Last 10 Comments Retrieved Successfully. 
-now - DEBUG --> Dao.php:getLast10Comments: Last 10 Comments Retrieved Successfully. 
-now - DEBUG --> Dao.php:getLast10Comments: Last 10 Comments Retrieved Successfully. 
-now - DEBUG --> Dao.php:getLast10Comments: Last 10 Comments Retrieved Successfully. 
-now - DEBUG --> Dao.php:getLast10Comments: Last 10 Comments Retrieved Successfully. 
-now - DEBUG --> Dao.php:getLast10Comments: Last 10 Comments Retrieved Successfully. 
-now - DEBUG --> Dao.php:getLast10Comments: Last 10 Comments Retrieved Successfully. 
-now - DEBUG --> Dao.php:getLast10Comments: Last 10 Comments Retrieved Successfully. 

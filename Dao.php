@@ -11,7 +11,7 @@ private $pass = "b814df9b";
 protected $logger;
 
 public function __construct() {
-         $this->logger = new KLogger( "log.txt" , KLogger::DEBUG );
+         $this->logger = new KLogger( "Handlers/log.txt" , KLogger::DEBUG );
 }
 
 public function getConnection () {
