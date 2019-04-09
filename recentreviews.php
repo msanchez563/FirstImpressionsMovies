@@ -36,15 +36,13 @@ $dao = new Dao();
     ?>
   </div>
   <div class="last10reviews">
+    <h1>Last 10 Reviews</h1>
     <table>
-      <thead>
         <tr>
           <th>Reviewer UserName</th>
           <th>Movie Title</th>
           <th>ReviewDescription</th>
         </tr>
-      </thead>
-      <tbody>
         <?php
         $comments = $dao->getLast10Comments();
         foreach ($comments as $comment) {
@@ -59,7 +57,6 @@ $dao = new Dao();
             <td>
           </tr>
         <?php } ?>
-      </tbody>
     </table>
   </div>
   <div class="footer">

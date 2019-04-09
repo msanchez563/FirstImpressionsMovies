@@ -9,6 +9,10 @@
   border-bottom: 1px solid;
   border-bottom-color: #e40712;
 }
+table,th {
+  border: 1px solid black;
+  text-align: center;
+}
 button{
   cursor: pointer;
 }
@@ -27,12 +31,10 @@ button{
   left: 85%;
 }
 .last10reviews{
-  border: 1px black solid;
   position: absolute;
   text-align: center;
   top: 150px;
   left: 45%;
-  width: 20%;
   height: 20%;
 }
 .reviews{
