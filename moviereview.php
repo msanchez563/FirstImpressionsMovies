@@ -28,7 +28,7 @@ $movie_title = $_GET['Search'];
   </div>
   <div class="results">
     <form method="POST" action="Handlers/commenthandler.php">
-      <div><label for="movie">Movie Title:</label><br><input id="movie" type="text" name="movietitle" /></div><br>
+      <div><label for="movie">Movie Title:</label><br><input id="movie" type="text" name="movietitle" maxlength = "32" /></div><br>
       <div><label for="reviewtext">Review: </label><br><textarea id="reviewtext" maxlength="512" name="descript" value="Place Movie Review Here"></textarea></div>
       <input type="submit" value="Leave Review" />
     </form>
