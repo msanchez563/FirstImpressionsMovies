@@ -16,23 +16,23 @@ session_start();
     MFI
     <?php
     if (isset($_SESSION['status']) && $_SESSION['status'] == 'logged') {
-      echo "<form id = 'sign' action = 'Handlers/logout.php'><input type ='submit' value ='Logout' /></form>";
+      echo "<form id = 'sign' action = 'Handlers/logout.php'><input type ='button' class = 'button' value ='Logout' /></form>";
     } else {
-      echo "<form id = 'sign' action = 'signin.php'><input type = 'submit' value = 'Sign-In' /></form>";
+      echo "<form id = 'sign' action = 'signin.php'><input type = 'submit' class = 'button' value = 'Sign-In' /></form>";
     }
     ?>
   </div>
   <div class="dropdown">
-    <form action="index.php"><input type="submit" value="Home" /></form>
+    <form action="index.php"><input type="submit" class = "button" value="Home" /></form>
     <form class="reviews" action="recentreviews.php">
       Click To See Past Reviews:
-      <input id="moviereviews" type="submit" value="See Reviews" />
+      <input id="moviereviews" class = "button" type="submit" value="See Reviews" />
     </form>
     <?php
     if (isset($_SESSION['status']) && $_SESSION['status'] == 'logged') {
       echo "<form class = 'leavereview' action = 'moviereview.php'>";
       echo "Click To Leave Movie Review: ";
-      echo "<input id = 'review' type = 'submit' value = 'Leave Review' />";
+      echo "<input id = 'review' class = 'button' type = 'submit' value = 'Leave Review' />";
       echo "</form>";
     }
     ?>

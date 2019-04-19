@@ -13,7 +13,16 @@ table,th {
   border: 1px solid black;
   text-align: center;
 }
-button{
+.button{
+  background-color: #50c878;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
   cursor: pointer;
 }
 #sub{
@@ -40,8 +49,8 @@ button{
 .reviews{
   position: relative;
   left: 40%;
-  max-width: 300px;
-  bottom: 37px;
+  max-width: 500px;
+  bottom: 75px;
   color: white;
 }
 .leavereview{
