@@ -214,3 +214,8 @@ now - DEBUG --> Dao.php:getLast10Comments: Last 10 Comments Retrieved Successful
 now - DEBUG --> Dao.php:getUserById: Get user_name by user_id successful 
 now - DEBUG --> Dao.php:getUserById: Get user_name by user_id successful 
 now - DEBUG --> Dao.php:getUserById: Get user_name by user_id successful 
+now - DEBUG --> Dao.php:getLast10Comments: Last 10 Comments Retrieved Successfully. 
+now - DEBUG --> Dao.php:getUserById: Get user_name by user_id successful 
+now - DEBUG --> Dao.php:getUserById: Get user_name by user_id successful 
+now - DEBUG --> Dao.php:getUserById: Get user_name by user_id successful 
+now - DEBUG --> Dao.php:getUserById: Get user_name by user_id successful 
