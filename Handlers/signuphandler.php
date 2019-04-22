@@ -41,14 +41,15 @@ if (empty($password1)) {
   $valid = false;
 }
 if(empty($password2)){
-  $messages = "Please re-enter password.";
+  $messages[] = "Please re-enter password.";
   $valid = false;
 }
-
-$email = test_input($_POST["email"]);
-if (!valid_email($email)) {
+if (!empty($email)) {
+  $email = test_input($_POST["email"]);
+  if(!valid_email($email)){
     $messages[] = "Invalid email format";
     $valid = false;
+  }
 }
 if ($password1 != $password2) {
   $messages[] = "Passwords dont match";

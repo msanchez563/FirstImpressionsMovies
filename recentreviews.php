@@ -25,7 +25,7 @@ $dao = new Dao();
     ?>
   </div>
   <div class="dropdown">
-  <form action="index.php"><input type="submit" class = "button" value="Home" /></form>
+  <form class="home" action="index.php"><input type="submit" class = "button" value="Home" /></form>
     <?php
     if (isset($_SESSION['status']) && $_SESSION['status'] == 'logged') {
       echo "<form class = 'leavereview' action = 'moviereview.php'>";
@@ -50,11 +50,9 @@ $dao = new Dao();
           <tr>
             <td><?php $username = $dao->getUserById($comment['creator_user_id']);
              echo htmlentities($username['user_name']); ?>
-            <td>
-            <td><?php echo htmlentities($comment['movie_title']); ?>
-            <td>
-            <td><?php echo htmlentities($comment['descript']); ?>
-            <td>
+            </td>
+            <td><?php echo htmlentities($comment['movie_title']); ?></td>
+            <td><?php echo htmlentities($comment['descript']); ?></td>
           </tr>
         <?php } ?>
     </table>

@@ -10,11 +10,13 @@
   border-bottom-color: #e40712;
 }
 .home{
+  position: relative;
   bottom: 2px;
 }
-table,th {
+table {
   border: 1px solid black;
   text-align: center;
+  width: 600px;
 }
 .button{
   background-color: #50c878;
@@ -38,6 +40,9 @@ table,th {
   position: relative;
   left: 50%;
   bottom: 5px;
+}
+.errormessages{
+  color: red;
 }
 #badmessage{
   background-color: red;
