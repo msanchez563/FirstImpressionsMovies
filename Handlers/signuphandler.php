@@ -62,9 +62,11 @@ if (!$valid) {
 }
 //echo "CONGRATS YOU CREATE A USER";
 // insert stuff into a user table in the database..
-
-$dao->createUser($email,$first_name,$last_name,$username,$password1);
+$salt = "a1325a52cf";
+$hashpass = hash("sha256",$password1 + $salt);
+$dao->createUser($email,$first_name,$last_name,$username,$hashpass);
 $_SESSION['status'] = 'logged';
 $_SESSION['user'] = $username;
+$_SESSION['message'] = 'Successfully Created User';
 header("Location: ../index.php");
 exit;

@@ -15,24 +15,33 @@ session_start();
   <div class="topbar">
     MFI
     <?php
+    if (isset($_SESSION['message'])) {
+      echo "<div id = 'message'>" . $_SESSION['message'] . "</div>";
+    }
+    ?>
+    <?php
+    $id = 'sign';
+    if(isset($_SESSION['message'])){
+      $id = 'signmessage';
+    }
     if (isset($_SESSION['status']) && $_SESSION['status'] == 'logged') {
-      echo "<form id = 'sign' action = 'Handlers/logout.php'><input type ='button' class = 'button' value ='Logout' /></form>";
+      echo "<form id = '".$id."' action = 'Handlers/logout.php'><input type ='submit' class = 'button' value ='Logout' /></form>";
     } else {
-      echo "<form id = 'sign' action = 'signin.php'><input type = 'submit' class = 'button' value = 'Sign-In' /></form>";
+      echo "<form id = '".$id."' action = 'signin.php'><input type = 'submit' class = 'button' value = 'Sign-In' /></form>";
     }
     ?>
   </div>
   <div class="dropdown">
-    <form action="index.php"><input type="submit" class = "button" value="Home" /></form>
+    <form class="home" action="index.php"><input type="submit" class = "button" value="Home" /></form>
     <form class="reviews" action="recentreviews.php">
       Click To See Past Reviews:
-      <input id="moviereviews" class = "button" type="submit" value="See Reviews" />
+      <input class = "button" type="submit" value="See Reviews" />
     </form>
     <?php
     if (isset($_SESSION['status']) && $_SESSION['status'] == 'logged') {
-      echo "<form class = 'leavereview' action = 'moviereview.php'>";
-      echo "Click To Leave Movie Review: ";
-      echo "<input id = 'review' class = 'button' type = 'submit' value = 'Leave Review' />";
+      echo "<form class = 'leavereviewindex' action = 'moviereview.php'>";
+      echo "Click To Post Your Own Movie Review:";
+      echo "<input class ='button' type = 'submit' value = 'Leave Review' />";
       echo "</form>";
     }
     ?>

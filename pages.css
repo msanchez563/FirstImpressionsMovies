@@ -9,6 +9,9 @@
   border-bottom: 1px solid;
   border-bottom-color: #e40712;
 }
+.home{
+  bottom: 2px;
+}
 table,th {
   border: 1px solid black;
   text-align: center;
@@ -17,6 +20,7 @@ table,th {
   background-color: #50c878;
   border: none;
   color: white;
+  border: 1px solid white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -24,6 +28,26 @@ table,th {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+#message{
+  background-color: green;
+  color: white;
+  border: 1px solid white;
+  max-width: 200px;
+  font-size: 22px;
+  position: relative;
+  left: 50%;
+  bottom: 5px;
+}
+#badmessage{
+  background-color: red;
+  color: white;
+  border: 1px solid white;
+  max-width: 200px;
+  font-size: 22px;
+  position: relative;
+  left: 50%;
+  bottom: 5px;
 }
 #sub{
   max-width: 200px;
@@ -36,7 +60,14 @@ table,th {
   max-width: 200px;
   height: 12px;
   position: relative;
-  bottom: 15px;
+  bottom: 2px;
+  left: 85%;
+}
+#signmessage{
+  max-width: 200px;
+  height: 12px;
+  position: relative;
+  bottom: 30px;
   left: 85%;
 }
 .last10reviews{
@@ -48,16 +79,23 @@ table,th {
 }
 .reviews{
   position: relative;
-  left: 40%;
+  left: 30%;
   max-width: 500px;
-  bottom: 75px;
+  bottom: 76px;
   color: white;
 }
 .leavereview{
   position: relative;
-  max-width: 400px;
-  left: 75%;
-  bottom: 75px;
+  max-width: 600px;
+  left: 55%;
+  bottom: 77px;
+  color: white;
+}
+.leavereviewindex{
+  position: relative;
+  max-width: 600px;
+  left: 55%;
+  bottom: 151px;
   color: white;
 }
 .dropdown{

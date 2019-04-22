@@ -14,9 +14,14 @@ session_start();
 <body>
   <div class="topbar">
     MFI
+    <?php
+    if (isset($_SESSION['badmessage'])) {
+      echo "<div id = 'badmessage'>" . $_SESSION['badmessage'] . "</div>";
+    }
+    ?>
   </div>
   <div class="dropdown">
-    <form action="index.php"><input type="submit" value="Home" /></form>
+  <form action="index.php"><input type="submit" class = "button" value="Home" /></form>
   </div>
   <form method="POST" class="sign-in" action="Handlers/signinhandler.php">
     <div><label for="usernameSI">User:</label><input type="text" name="usernameSI" /></div>

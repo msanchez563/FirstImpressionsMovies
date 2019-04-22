@@ -1,6 +1,10 @@
 <?php
 session_start();
-$movie_title = $_GET['Search'];
+if(!isset($_SESSION['status'])){
+  $_SESSION['badmessage'] = "Must Log In/Sign In To Leave Review!";
+  header("Location: signin.php");
+  exit;
+}
 ?>
 <html>
 
@@ -17,14 +21,14 @@ $movie_title = $_GET['Search'];
     MFI
     <?php
     if (isset($_SESSION['status']) && $_SESSION['status'] == 'logged') {
-      echo "<form id = 'sign' action = 'Handlers/logout.php'><input type ='submit' value ='Logout' /></form>";
+      echo "<form id = 'sign' action = 'Handlers/logout.php'><input type ='button' class = 'button' value ='Logout' /></form>";
     } else {
-      echo "<form id = 'sign' action = 'signin.php'><input type = 'submit' value = 'Sign-In' /></form>";
+      echo "<form id = 'sign' action = 'signin.php'><input type = 'submit' class = 'button' value = 'Sign-In' /></form>";
     }
     ?>
   </div>
   <div class="dropdown">
-    <form action="index.php"><input type="submit" value="Home" /></form>
+    <form action="index.php"><input type="submit" class = "button" value="Home" /></form>
   </div>
   <div class="results">
     <form method="POST" action="Handlers/commenthandler.php">

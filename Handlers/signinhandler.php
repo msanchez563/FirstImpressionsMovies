@@ -16,7 +16,9 @@ if (empty($password)) {
   $messages[] = "Please enter a password to sign in.";
   $valid = false;
 }
-if ($dao->userExists($username, $password) !== TRUE) {
+$salt = "a1325a52cf";
+$hashpass = hash("sha256",$password1 + $salt);
+if ($dao->userExists($username, $hashpass) !== TRUE) {
   $messages[] = "Invalid password/username";
   $valid = false;
 }
@@ -30,6 +32,6 @@ if (!$valid) {
 //echo "CONGRATS YOU CREATE A USER";
 $_SESSION['status'] = 'logged';
 $_SESSION['user'] = $username;
-
+$_SESSION['message'] = 'Successful Login';
 header("Location: ../index.php");
 exit;

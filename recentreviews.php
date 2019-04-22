@@ -18,19 +18,19 @@ $dao = new Dao();
     MFI
     <?php
     if (isset($_SESSION['status']) && $_SESSION['status'] == 'logged') {
-      echo "<form id = 'sign' action = 'Handlers/logout.php'><input type ='submit' value ='Logout' /></form>";
+      echo "<form id = 'sign' action = 'Handlers/logout.php'><input type ='submit' class = 'button' value ='Logout' /></form>";
     } else {
-      echo "<form id = 'sign' action = 'signin.php'><input type = 'submit' value = 'Sign-In' /></form>";
+      echo "<form id = 'sign' action = 'signin.php'><input type = 'submit' class = 'button' value = 'Sign-In' /></form>";
     }
     ?>
   </div>
   <div class="dropdown">
-    <form action="index.php"><input type="submit" value="Home" /></form>
+  <form action="index.php"><input type="submit" class = "button" value="Home" /></form>
     <?php
     if (isset($_SESSION['status']) && $_SESSION['status'] == 'logged') {
       echo "<form class = 'leavereview' action = 'moviereview.php'>";
-      echo "Click To Leave Movie Review:";
-      echo "<input id = 'review' type = 'submit' value = 'Leave Review' />";
+      echo "Click To Post Your Own Movie Review:";
+      echo "<input class ='button' type = 'submit' value = 'Leave Review' />";
       echo "</form>";
     }
     ?>
