@@ -46,7 +46,6 @@ table,th,td {
   font-size: 22px;
   position: relative;
   left: 40%;
-  bottom: 5px;
 }
 .errormessages{
   color: red;
@@ -71,15 +70,15 @@ table,th,td {
 #sign{
   max-width: 200px;
   height: 12px;
-  position: relative;
-  bottom: 10px;
+  position: absolute;
+  bottom: 28px;
   left: 85%;
 }
 #signmessage{
   max-width: 200px;
   height: 12px;
-  position: relative;
-  bottom: 38px;
+  position: absolute;
+  bottom: 48px;
   left: 85%;
 }
 .last10reviews{
@@ -94,6 +93,7 @@ table,th,td {
   left: 30%;
   max-width: 500px;
   bottom: 76px;
+  font-family: 'Nanum Gothic', sans-serif;
   color: white;
 }
 .leavereview{
@@ -108,6 +108,7 @@ table,th,td {
   max-width: 600px;
   left: 55%;
   bottom: 151px;
+  font-family: 'Nanum Gothic', sans-serif;
   color: white;
 }
 .dropdown{
@@ -145,12 +146,36 @@ img{
 .sign-in{
   border: 1px black solid;
   width: 23%;
-  height: 200px;
+  height: 165px;
   position: relative;
   top: 140px;
   left: 25%;
   text-align: center;
   margin-right: 20px;
+}
+#passwordSI{
+  position: relative;
+  left: 4px;
+}
+#signinbutton{
+  position: relative;
+  top: 102px;
+}
+#email{
+  position: relative;
+  left: 16px;
+}
+#user_name{
+  position: relative;
+  left: 1px;
+}
+#password1{
+  position: relative;
+  left: 5px;
+}
+#password2{
+  position: relative;
+  right: 20px;
 }
 .sign-up{
   border: 1px black solid;
@@ -158,7 +183,7 @@ img{
   height: auto;
   position: relative;
   left: 50%;
-  bottom: 78px;
+  bottom: 43px;
   text-align: center;
 }
 .aboutme{

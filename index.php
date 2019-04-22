@@ -4,6 +4,7 @@ session_start();
 <html>
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
   <link rel="stylesheet" href="pages.css">
   <link rel="shortcut icon" type="image/png" href="favicon.png" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
@@ -19,7 +20,7 @@ session_start();
     <span id="logo">FIM</span>
     <?php
     if (isset($_SESSION['message'])) {
-      echo "<div id = 'message'>" . $_SESSION['message'] . "</div>";
+      echo "<span id = 'message'>" . $_SESSION['message'] . "</span>";
     }
     unset($_SESSION['message']);
     ?>

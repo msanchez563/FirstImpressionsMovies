@@ -4,6 +4,7 @@ session_start();
 <html>
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
   <link rel="stylesheet" href="pages.css">
   <link rel="shortcut icon" type="image/png" href="favicon.png" />
 </head>
@@ -16,7 +17,7 @@ session_start();
     <span id="logo">FIM</span>
     <?php
     if (isset($_SESSION['status']) && $_SESSION['status'] == 'logged') {
-      echo "<form id = 'sign' action = 'Handlers/logout.php'><input type ='button' class = 'button' value ='Logout' /></form>";
+      echo "<form id = 'sign' action = 'Handlers/logout.php'><input type ='submit' class = 'button' value ='Logout' /></form>";
     } else {
       echo "<form id = 'sign' action = 'signin.php'><input type = 'submit' class = 'button' value = 'Sign-In' /></form>";
     }

@@ -6,6 +6,7 @@ $dao = new Dao();
 <html>
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
   <link rel="stylesheet" href="pages.css">
   <link rel="shortcut icon" type="image/png" href="favicon.png" />
 </head>
