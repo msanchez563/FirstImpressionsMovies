@@ -18,7 +18,7 @@ if(!isset($_SESSION['status'])){
 
 <body>
   <div class="topbar">
-    MFI
+    <span id="logo">FIM</span>
     <?php
     if (isset($_SESSION['status']) && $_SESSION['status'] == 'logged') {
       echo "<form id = 'sign' action = 'Handlers/logout.php'><input type ='button' class = 'button' value ='Logout' /></form>";
@@ -28,9 +28,9 @@ if(!isset($_SESSION['status'])){
     ?>
   </div>
   <div class="dropdown">
-    <form action="index.php"><input type="submit" class = "button" value="Home" /></form>
+    <form class="home" action="index.php"><input type="submit" class = "button" value="Home" /></form>
   </div>
-  <div class="results">
+  <div class="postreview">
     <form method="POST" action="Handlers/commenthandler.php">
       <div><label for="movie">Movie Title:</label><br><input id="movie" type="text" name="movietitle" maxlength = "32" /></div><br>
       <div><label for="reviewtext">Review: </label><br><textarea id="reviewtext" maxlength="512" name="descript" value="Place Movie Review Here"></textarea></div>
@@ -47,7 +47,7 @@ if(!isset($_SESSION['status'])){
   unset($_SESSION['form_input']);
   ?>
   <div class="footer">
-    &copy; <a href="aboutfaq.php">About Us</a> | <a href="aboutfaq.php">FAQ</a>
+    &copy; <a href="aboutfaq.php">About Us</a>
   </div>
 </body>
 

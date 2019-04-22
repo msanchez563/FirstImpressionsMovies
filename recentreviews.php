@@ -15,7 +15,7 @@ $dao = new Dao();
 
 <body>
   <div class="topbar">
-    MFI
+    <span id="logo">FIM</span>
     <?php
     if (isset($_SESSION['status']) && $_SESSION['status'] == 'logged') {
       echo "<form id = 'sign' action = 'Handlers/logout.php'><input type ='submit' class = 'button' value ='Logout' /></form>";
@@ -58,7 +58,7 @@ $dao = new Dao();
     </table>
   </div>
   <div class="footer">
-    &copy; <a href="aboutfaq.php">About Us</a> | <a href="aboutfaq.php">FAQ</a>
+    &copy; <a href="aboutfaq.php">About Us</a>
 </body>
 
 </html>

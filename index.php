@@ -6,6 +6,9 @@ session_start();
 <head>
   <link rel="stylesheet" href="pages.css">
   <link rel="shortcut icon" type="image/png" href="favicon.png" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  <script src = "messages.js"></script>
 </head>
 <header>
   <title>FirstImpressionsMovies</title>
@@ -13,11 +16,12 @@ session_start();
 
 <body>
   <div class="topbar">
-    MFI
+    <span id="logo">FIM</span>
     <?php
     if (isset($_SESSION['message'])) {
       echo "<div id = 'message'>" . $_SESSION['message'] . "</div>";
     }
+    unset($_SESSION['message']);
     ?>
     <?php
     $id = 'sign';
@@ -48,7 +52,7 @@ session_start();
   </div>
   <div class="movieimage"><img src="moviescreen.png" /></div>
   <div class="footer">
-    &copy; <a href="aboutfaq.php">About Us</a> | <a href="aboutfaq.php">FAQ</a>
+    &copy; <a href="aboutfaq.php">About Us</a>
 </body>
 
 </html>

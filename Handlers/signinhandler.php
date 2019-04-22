@@ -32,6 +32,6 @@ if (!$valid) {
 //echo "CONGRATS YOU CREATE A USER";
 $_SESSION['status'] = 'logged';
 $_SESSION['user'] = $username;
-$_SESSION['message'] = 'Successful Login';
+$_SESSION['message'] = 'Login Successful';
 header("Location: ../index.php");
 exit;

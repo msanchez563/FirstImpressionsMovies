@@ -6,6 +6,9 @@ session_start();
 <head>
   <link rel="stylesheet" href="pages.css">
   <link rel="shortcut icon" type="image/png" href="favicon.png" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  <script src="messages.js"></script>
 </head>
 <header>
   <title>FirstImpressionsMovies</title>
@@ -13,15 +16,16 @@ session_start();
 
 <body>
   <div class="topbar">
-    MFI
+    <span id="logo">FIM</span>
     <?php
     if (isset($_SESSION['badmessage'])) {
       echo "<div id = 'badmessage'>" . $_SESSION['badmessage'] . "</div>";
     }
+    unset($_SESSION['badmessage']);
     ?>
   </div>
   <div class="dropdown">
-  <form class='home' action="index.php"><input type="submit" class = "button" value="Home" /></form>
+    <form class='home' action="index.php"><input type="submit" class="button" value="Home" /></form>
   </div>
   <form method="POST" class="sign-in" action="Handlers/signinhandler.php">
     <div><label for="usernameSI">User:</label><input type="text" id="usernameSI" name="usernameSI" /></div>
@@ -48,7 +52,7 @@ session_start();
   unset($_SESSION['form_input']);
   ?>
   <div class="footer">
-    &copy; <a href="aboutfaq.php">About Us</a> | <a href="aboutfaq.php">FAQ</a>
+    &copy; <a href="aboutfaq.php">About Us</a>
 </body>
 
 </html>
