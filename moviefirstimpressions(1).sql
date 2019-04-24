@@ -1,5 +1,6 @@
 USE heroku_fac28c953799373;
 
+drop table User;
 
 
 CREATE TABLE IF NOT EXISTS  Users (
@@ -7,7 +8,7 @@ CREATE TABLE IF NOT EXISTS  Users (
     email varchar(64) NOT NULL UNIQUE,
     first_name VARCHAR(16) NOT NULL,
     last_name VARCHAR(16) NOT NULL,
-    user_name VARCHAR(64) NOT NULL,
+    user_name VARCHAR(64) NOT NULL UNIQUE,
     password VARCHAR(256) NOT NULL
 );
 

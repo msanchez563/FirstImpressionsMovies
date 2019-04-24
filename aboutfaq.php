@@ -44,7 +44,7 @@ session_start();
       My name is Michael Sanchez and this is my website for CS401-Web Development.
       This website is rough but I tried hard on it so be nice. I wanted to have a website
       where people can put their knee jerk thoughts on a movie that they had watched for 
-      the very first time. 
+      the very first time.
     </span>
   </div>
   <div class="footer">

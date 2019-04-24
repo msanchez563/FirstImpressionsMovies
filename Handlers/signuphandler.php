@@ -47,12 +47,20 @@ if(empty($password2)){
 if (!empty($email)) {
   $email = test_input($_POST["email"]);
   if(!valid_email($email)){
-    $messages[] = "Invalid email format";
+    $messages[] = "Invalid email format.";
     $valid = false;
   }
 }
 if ($password1 != $password2) {
-  $messages[] = "Passwords dont match";
+  $messages[] = "Passwords dont match.";
+  $valid = false;
+}
+if($dao->usernameExists($username)){
+  $messages[] = "UserName already exists.";
+  $valid = false;
+}
+if($dao->emailExists($email)){
+  $messages[] = "Email already exists.";
   $valid = false;
 }
 if (!$valid) {

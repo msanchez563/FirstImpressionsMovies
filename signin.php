@@ -33,7 +33,7 @@ if(isset($_SESSION['status'])){
     <form class='home' action="index.php"><input type="submit" class="button" value="Home" /></form>
   </div>
   <form method="POST" class="sign-in" action="Handlers/signinhandler.php">
-    <div><label id="usernameSI" for="usernameSI">UserName:</label><input type="text" id="usernameSI" name="usernameSI" /></div>
+    <div><label id="usernameSI" for="usernameSI">UserName:</label><input value="<?php echo isset($_SESSION['form_input']['usernameSI']) ? $_SESSION['form_input']['usernameSI'] : ''; ?>" type="text" id="usernameSI" name="usernameSI" /></div>
     <div><label id="passwordSI" for="passwordSI">Password:</label><input type="password" id="passwordSI" name="passwordSI" /></div>
     <input id="signinbutton" type="submit" value="Sign-In" />
   </form>

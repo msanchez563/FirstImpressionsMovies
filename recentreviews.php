@@ -9,6 +9,9 @@ $dao = new Dao();
   <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
   <link rel="stylesheet" href="pages.css">
   <link rel="shortcut icon" type="image/png" href="favicon.png" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  <script src = "messages.js"></script>
 </head>
 <header>
   <title>FirstImpressionsMovies</title>

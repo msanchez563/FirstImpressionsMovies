@@ -47,7 +47,7 @@ public function emailExists($email){
      $q->bindParam(':email', $email);
      $q->execute();
      $results = $q->fetch(PDO::FETCH_ASSOC);
-     $result = $results["count(*)"];
+     $result = $results["COUNT(*)"];
      if ($result) {
          $this->logger->LogDebug(__FUNCTION__ . ": User was found.");
          return TRUE;
@@ -64,7 +64,7 @@ public function usernameExists($user_name){
      $q->bindParam(':user_name', $user_name);
      $q->execute();
      $results = $q->fetch(PDO::FETCH_ASSOC);
-     $result = $results["count(*)"];
+     $result = $results["COUNT(*)"];
      if ($result) {
          $this->logger->LogDebug(__FUNCTION__ . ": User was found.");
          return TRUE;
@@ -112,7 +112,7 @@ public function createUser ($email,$first_name,$last_name,$user_name,$password) 
    try{
     $emailexists = $this->emailExists($email);
     $usernameexists = $this->usernameExists($user_name);
-    if(!$exists && !$usernameexists){
+    if(!$emailexists && !$usernameexists){
        $conn = $this->getConnection();
        $q = $conn->prepare("INSERT INTO Users (email, first_name,last_name, user_name, password) VALUES (:email, :first_name, :last_name, :user_name, :password);");
        $q->bindParam(":email",$email);
