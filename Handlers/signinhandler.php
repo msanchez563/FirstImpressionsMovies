@@ -17,7 +17,7 @@ if (empty($password)) {
   $valid = false;
 }
 $salt = "a1325a52cf";
-$hashpass = hash("sha256",$password1 + $salt);
+$hashpass = hash("sha256",$password + $salt);
 if ($dao->userExists($username, $hashpass) !== TRUE) {
   $messages[] = "Invalid password/username";
   $valid = false;
